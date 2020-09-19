@@ -22,7 +22,7 @@ class HomePage extends StatelessWidget {
                   ),
                   FlatButton(
                     onPressed: () => _.removeOnBoardingStatus(),
-                    child: Text("Un set On Boarding Done")
+                    child: Text("Unset On Boarding Done")
                   )
                 ],
               ),
