@@ -1,6 +1,6 @@
-# getXAuth
+# getXAuth Example
 
-A Flutter GetX Authorization example with injection dependency and no Splash screen.
+A Flutter GetX Authorization example with dependency injection and no Splash screen.
 
 - The app will detect whether the user is already logged in and redirect it to the corresponding screen before it loads.
 - An on boarding screen is shown when the app is started for the first time. After the first start, it will show a login or home screen.

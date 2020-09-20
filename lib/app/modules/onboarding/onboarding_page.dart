@@ -17,7 +17,7 @@ class OnboardingPage extends StatelessWidget {
                 children: [
                   Text("On boarding"),
                   FlatButton(
-                    onPressed: () => _.goToLogin(),
+                    onPressed: () => _.goToLoginPage(),
                     child: Text("Go to login")
                   )
                 ],
