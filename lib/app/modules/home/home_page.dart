@@ -9,26 +9,25 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetBuilder<HomeController>(
       builder: (_) {
-        return Scaffold(
-          body: Container(
-            child: Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text("Home Page"),
-                  FlatButton(
-                    onPressed: () => _.signOut(),
-                    child: Text("Sign out")
-                  ),
-                  FlatButton(
-                    onPressed: () => _.removeOnBoardingStatus(),
-                    child: Text("Unset On Boarding Done")
-                  )
-                ],
+        return Stack(children: [
+          Scaffold(
+            body: Container(
+              child: Center(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text("Home Page"),
+                    FlatButton(
+                        onPressed: () => _.signOut(), child: Text("Sign out")),
+                    FlatButton(
+                        onPressed: () => _.removeOnBoardingStatus(),
+                        child: Text("Unset On Boarding Done"))
+                  ],
+                ),
               ),
             ),
           ),
-        );
+        ]);
       },
     );
   }

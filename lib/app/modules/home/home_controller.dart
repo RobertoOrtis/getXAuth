@@ -1,13 +1,12 @@
 import 'package:get/get.dart';
-import 'package:getXAuth/app/data/repositories/authentication/authentication_repository.dart';
+import 'package:getXAuth/app/modules/authentication/authentication_controller.dart';
 import 'package:getXAuth/app/modules/onboarding/onboarding_controller.dart';
-import 'package:getXAuth/app/routes/app_pages.dart';
 
 class HomeController extends GetxController {
-  final AuthenticationRepository _authenticationRepository =
-      Get.find<AuthenticationRepository>();
-  final OnboardingController _onboardingController =
-      Get.find<OnboardingController>();
+  final AuthenticationController _authenticationController =
+      Get.find<AuthenticationController>();
+
+  // this._authenticationRepository.authenticationStatus;
   @override
   void onInit() {
     // print(_authRepository.authenticationStatus);
@@ -16,13 +15,17 @@ class HomeController extends GetxController {
     super.onInit();
   }
 
+  @override
+  void onReady() {
+    super.onReady();
+  }
+
   void signOut() {
-    _authenticationRepository
+    _authenticationController
         .setAuthenticationStatus(AuthenticationStatus.unauthenticated);
-    Get.offAllNamed(AppRoutes.LOGIN);
   }
 
   void removeOnBoardingStatus() {
-    _onboardingController.removeOnBoardingStatus();
+    Get.find<OnboardingController>().removeOnBoardingStatus();
   }
 }

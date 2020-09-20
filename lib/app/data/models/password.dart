@@ -7,9 +7,6 @@ class Password extends FormzInput<String, PasswordValidatorError> {
   const Password.dirty([String value = '']) : super.dirty(value);
 
   @override
-  // PasswordValidatorError validator(String value) {
-  //   return value?.isNotEmpty == true ? null : PasswordValidatorError.emtpy;
-  // }
   PasswordValidatorError validator(String value) {
     if (value?.isEmpty == true) {
       return PasswordValidatorError.emtpy;
